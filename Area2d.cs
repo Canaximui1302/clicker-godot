@@ -18,7 +18,7 @@ public partial class Area2d : Area2D
 	{
 		if (@ev is InputEventMouseButton mouse && mouse.ButtonIndex == MouseButton.Left && mouse.Pressed)
         {
-            GD.Print("Character clicked!");
+            // GD.Print("Character clicked!");
 
             Vector2 screenSize = viewport.GetVisibleRect().Size;
 
