@@ -11,21 +11,15 @@ public partial class Pearl : Sprite2D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _Input(InputEvent @ev)
 	{
-		Vector2 movement = new Vector2(0, 0);
-		if (Input.IsKeyPressed(Key.W)) {
-			movement += new Vector2(0, -1);
+		if (@ev is InputEventMouseButton mouseEv && mouseEv.Pressed)
+		{
+			if (mouseEv.ButtonIndex == MouseButton.Left)
+			{
+				GD.Print("Left clicked");
+				this.Position += new Vector2(2, 0);
+			}
 		}
-		if (Input.IsKeyPressed(Key.A)) {
-			movement += new Vector2(-1, 0);
-		}
-		if (Input.IsKeyPressed(Key.S)) {
-			movement += new Vector2(0, 1);
-		}
-		if (Input.IsKeyPressed(Key.D)) {
-			movement += new Vector2(1, 0);
-		}
-		this.Position += movement.Normalized() * 3;
 	}
 }
