@@ -11,37 +11,40 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 650.0
 
-[node name="Start" type="Button" parent="Manager"]
+[node name="Panel" type="Panel" parent="Manager"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 556.0
+offset_top = 305.0
+offset_right = -556.0
+offset_bottom = -305.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-text = "Start"
 
-[node name="Quit" type="Button" parent="Manager"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Manager/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -166.0
-offset_right = 22.0
-offset_bottom = -135.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
+anchors_preset = -1
+anchor_left = -13.77
+anchor_top = -7.6500006
+anchor_right = 14.920001
+anchor_bottom = 8.575001
+offset_left = 550.80005
+offset_top = 306.00003
+offset_right = -549.80005
+offset_bottom = -273.00003
+
+[node name="Start" type="Button" parent="Manager/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="Manager/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Quit"
 
-[connection signal="pressed" from="Manager/Start" to="." method="_Start"]
-[connection signal="pressed" from="Manager/Quit" to="." method="_Quit"]
+[connection signal="pressed" from="Manager/Panel/VBoxContainer/Start" to="." method="_Start"]
+[connection signal="pressed" from="Manager/Panel/VBoxContainer/Quit" to="." method="_Quit"]
