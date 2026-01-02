@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(583, 322)
-scale = Vector2(0.10277781, 0.10833331)
+position = Vector2(496, 277)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_2c62f")
 script = ExtResource("2_gyfs4")
