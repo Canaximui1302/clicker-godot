@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://57t17xtbolrr"]
+[gd_scene load_steps=4 format=3 uid="uid://57t17xtbolrr"]
 
 [ext_resource type="Texture2D" uid="uid://chj317yrx5p11" path="res://Ender_Pearl.webp" id="1_2c62f"]
+[ext_resource type="Texture2D" uid="uid://c0ww8hy30d516" path="res://Background.webp" id="1_gyfs4"]
 [ext_resource type="Script" uid="uid://d2wp6wadbexhm" path="res://Pearl.cs" id="2_gyfs4"]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="BackG" type="Sprite2D" parent="."]
+position = Vector2(577.99994, 327)
+scale = Vector2(0.6010417, 0.6018518)
+texture = ExtResource("1_gyfs4")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(496, 277)
+position = Vector2(302.00003, 295)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_2c62f")
 script = ExtResource("2_gyfs4")
