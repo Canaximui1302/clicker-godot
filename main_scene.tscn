@@ -1,5 +1,12 @@
-[gd_scene format=3 uid="uid://57t17xtbolrr"]
+[gd_scene load_steps=3 format=3 uid="uid://57t17xtbolrr"]
+
+[ext_resource type="Texture2D" uid="uid://chj317yrx5p11" path="res://Ender_Pearl.webp" id="1_2c62f"]
+[ext_resource type="Script" uid="uid://d2wp6wadbexhm" path="res://Pearl.cs" id="2_gyfs4"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(549.5, 312.5)
+scale = Vector2(0.325, 0.30277777)
+texture = ExtResource("1_2c62f")
+script = ExtResource("2_gyfs4")
