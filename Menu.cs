@@ -32,11 +32,7 @@ public partial class Menu : Control
 		SettingsMenu.Show();
 	}
 
-	private void _Back()
-	{
-		mainMenu.Show();
-		SettingsMenu.Hide();
-	}
+
 
 	
 }
