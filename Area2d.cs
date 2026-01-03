@@ -41,6 +41,7 @@ public partial class Area2d : Area2D
 	{
 		if (@key is InputEventKey k && k.Pressed && k.Keycode == Key.Escape)
 		{
+			Hide();
 			pauseMenu.Show();
 		}
 	}

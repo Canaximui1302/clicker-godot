@@ -62,5 +62,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Exit game"
 
+[connection signal="pressed" from="PauseMenu/VBoxContainer/Resume" to="PauseMenu" method="_Resume"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Quit" to="PauseMenu" method="_Quit"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="PauseMenu" method="_Exit"]

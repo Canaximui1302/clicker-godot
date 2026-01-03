@@ -13,6 +13,7 @@ public partial class PauseMenu : Control
 
 	private void _Resume()
 	{
+		Hide();
 		parent.GetNode<Area2D>("Area2D").Show();
 	}
 
