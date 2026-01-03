@@ -3,12 +3,12 @@ using System;
 
 public partial class PauseMenu : Control
 {
-	private Control SettingsMenu;
+	private string path_to_main_screen = "res://menu.tscn";
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		SettingsMenu = GetNode<Control>("Settings");
+		
 		
 	}
 
@@ -16,5 +16,10 @@ public partial class PauseMenu : Control
 	private void _Exit()
 	{
 		GetTree().Quit();
+	}
+
+	private void _Quit()
+	{
+		GetTree().ChangeSceneToFile(path_to_main_screen);
 	}
 }

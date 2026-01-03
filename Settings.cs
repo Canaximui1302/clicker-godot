@@ -8,7 +8,7 @@ public partial class Settings : Control
 	public override void _Ready()
 	{
 		Hide();
-		Main = GetNode<Control>("Main");
+		Main = GetParent().GetNode<Control>("Main");
 	}
 
 	private void _Back()
