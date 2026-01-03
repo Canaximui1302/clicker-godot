@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://57t17xtbolrr"]
+[gd_scene load_steps=7 format=3 uid="uid://57t17xtbolrr"]
 
 [ext_resource type="Texture2D" uid="uid://chj317yrx5p11" path="res://Ender_Pearl.webp" id="1_2c62f"]
 [ext_resource type="Texture2D" uid="uid://c0ww8hy30d516" path="res://Background.webp" id="1_gyfs4"]
 [ext_resource type="Script" uid="uid://cvimou5fclmux" path="res://Area2d.cs" id="2_gyfs4"]
 [ext_resource type="Script" uid="uid://c12t2y72nri5p" path="res://PauseMenu.cs" id="4_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://s1yhkwo3yoyp" path="res://menuBG.png" id="5_8mm7a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyfs4"]
 radius = 46.0
@@ -32,6 +33,11 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("4_d5x1h")
+
+[node name="backgroundpause" type="Sprite2D" parent="PauseMenu"]
+position = Vector2(576.5, 326)
+scale = Vector2(1.1441352, 1.296)
+texture = ExtResource("5_8mm7a")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
 layout_mode = 1
