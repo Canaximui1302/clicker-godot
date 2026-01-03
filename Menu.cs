@@ -11,20 +11,10 @@ public partial class Menu : Control
         mainMenu = GetNode<Control>("Main");
         SettingsMenu = GetNode<Control>("Settings");
 
-		ShowMain();
+		SettingsMenu.Hide();
+
     }
 
-	private void ShowMain()
-	{
-		mainMenu.Show();
-		SettingsMenu.Hide();
-	}
-
-	private void ShowSettings()
-	{
-		mainMenu.Hide();
-		SettingsMenu.Show();
-	}
 	// Called when the node enters the scene tree for the first time.
 	private void _Quit()
 	{
@@ -38,12 +28,15 @@ public partial class Menu : Control
 
 	private void _Settings()
 	{
-		ShowSettings();
+		mainMenu.Hide();
+		SettingsMenu.Show();
 	}
 
 	private void _Back()
 	{
-		ShowMain();
+		mainMenu.Show();
+		SettingsMenu.Hide();
 	}
+
 	
 }

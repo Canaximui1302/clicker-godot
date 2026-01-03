@@ -34,3 +34,5 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Back"
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_Back"]
