@@ -10,11 +10,13 @@ radius = 46.0
 [node name="Node2D" type="Node2D"]
 
 [node name="BackG" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(577.00006, 325)
 scale = Vector2(0.6010417, 0.6018518)
 texture = ExtResource("1_gyfs4")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 script = ExtResource("2_gyfs4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
@@ -24,3 +26,47 @@ texture = ExtResource("1_2c62f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_gyfs4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.19
+offset_top = -68.0
+offset_right = 95.19
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+text = "Resume"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+text = "Settings"
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+text = "Quit to Main"
+
+[node name="Button4" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+text = "Exit game"
