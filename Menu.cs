@@ -8,5 +8,10 @@ public partial class Menu : Node2D
 	{
 		GetTree().Quit();
 	}
+
+	private void _Start()
+	{
+		GetTree().ChangeSceneToFile("res://main_scene.tscn");
+	}
 	
 }
