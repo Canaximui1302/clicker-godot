@@ -4,12 +4,12 @@ using System;
 public partial class Menu : Control
 {
 	private Control mainMenu;
-    private Control optionsMenu;
+    private Control SettingsMenu;
 
     public override void _Ready()
     {
         mainMenu = GetNode<Control>("Main");
-        optionsMenu = GetNode<Control>("Settings");
+        SettingsMenu = GetNode<Control>("Settings");
 
 		ShowMain();
     }
@@ -17,13 +17,13 @@ public partial class Menu : Control
 	private void ShowMain()
 	{
 		mainMenu.Show();
-		optionsMenu.Hide();
+		SettingsMenu.Hide();
 	}
 
 	private void ShowSettings()
 	{
 		mainMenu.Hide();
-		optionsMenu.Show();
+		SettingsMenu.Show();
 	}
 	// Called when the node enters the scene tree for the first time.
 	private void _Quit()
