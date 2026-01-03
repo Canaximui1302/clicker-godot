@@ -5,9 +5,13 @@ public partial class Area2d : Area2D
 {
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
     private const float Margin = 50f;
+
+	private Control pauseMenu;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		pauseMenu = GetParent().GetNode<Control>("PauseMenu");
+		pauseMenu.Hide();
 		rng.Randomize();
 		// Place character at the center of the viewport
         Position = GetViewportRect().Size / 2;
@@ -27,5 +31,17 @@ public partial class Area2d : Area2D
 
             Position = new Vector2(x, y);
         }
+		if (@ev is InputEventKey key && key.Pressed && key.Keycode == Key.Escape)
+		{
+			pauseMenu.Show();
+		}
+	}
+
+	public override void _Input(InputEvent @key)
+	{
+		if (@key is InputEventKey k && k.Pressed && k.Keycode == Key.Escape)
+		{
+			pauseMenu.Show();
+		}
 	}
 }
