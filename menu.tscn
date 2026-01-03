@@ -53,40 +53,6 @@ size_flags_vertical = 3
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 650.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37800002
-anchor_top = 0.30800003
-anchor_right = 0.62200004
-anchor_bottom = 0.69200003
-offset_left = -0.20602417
-offset_top = 0.1749878
-offset_right = 0.20593262
-offset_bottom = -0.17501831
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Sensitivity" type="Button" parent="Settings/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Sensitivity"
-metadata/_edit_use_anchors_ = true
-
-[node name="Back" type="Button" parent="Settings/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Back"
-metadata/_edit_use_anchors_ = true
-
 [connection signal="pressed" from="Main/VBoxContainer/Start" to="." method="_Start"]
 [connection signal="pressed" from="Main/VBoxContainer/Settings" to="." method="_Settings"]
 [connection signal="pressed" from="Main/VBoxContainer/Quit" to="." method="_Quit"]
-[connection signal="pressed" from="Settings/VBoxContainer/Sensitivity" to="." method="_Sense"]
-[connection signal="pressed" from="Settings/VBoxContainer/Back" to="." method="_Back"]

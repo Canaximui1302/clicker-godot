@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dxeva20rs6hkr"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37800002
+anchor_top = 0.30800003
+anchor_right = 0.62200004
+anchor_bottom = 0.69200003
+offset_left = -0.20602417
+offset_top = 0.7909851
+offset_right = 0.20593262
+offset_bottom = 0.440979
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Sensitivity" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Sensitivity"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Back"
+metadata/_edit_use_anchors_ = true
