@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://rb0hpaifbgaj" path="res://Menu.cs" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://s1yhkwo3yoyp" path="res://menuBG.png" id="2_ouk20"]
 
-[node name="menu" type="Node2D"]
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_lti8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,8 +16,6 @@ scale = Vector2(1.1481113, 1.29)
 texture = ExtResource("2_ouk20")
 
 [node name="Main" type="Control" parent="."]
-visible = false
-layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 650.0
@@ -54,7 +54,6 @@ text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 650.0
@@ -89,5 +88,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Main/VBoxContainer/Start" to="." method="_Start"]
 [connection signal="pressed" from="Main/VBoxContainer/Settings" to="." method="_Settings"]
 [connection signal="pressed" from="Main/VBoxContainer/Quit" to="." method="_Quit"]
-[connection signal="pressed" from="Settings/VBoxContainer/Sensitivity" to="." method="_Start"]
-[connection signal="pressed" from="Settings/VBoxContainer/Back" to="." method="_Settings"]
+[connection signal="pressed" from="Settings/VBoxContainer/Sensitivity" to="." method="_Sense"]
+[connection signal="pressed" from="Settings/VBoxContainer/Back" to="." method="_Back"]
