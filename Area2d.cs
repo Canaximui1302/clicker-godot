@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using System.Linq.Expressions;
 
 public partial class Area2d : Area2D
 {
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
+	private Label UItimer;
 	private Timer mytimer;
-	private float timeleft = 30f;
+	private float timeleft = 15f;
     private const float Margin = 50f;
 
 	private Control pauseMenu;
@@ -19,9 +21,21 @@ public partial class Area2d : Area2D
         Position = GetViewportRect().Size / 2;
 
 		mytimer = GetNode<Timer>("Timer");
+		UItimer = GetNode<Label>("countdown");
 
-		mytimer.Start(5);
+		UItimer.Position = new Vector2(0, -300);
+
+		mytimer.Start(15);
 	}
+
+    public override void _Process(double delta)
+    {
+        timeleft -= (float)delta;
+		if (timeleft < 0)
+			timeleft = 0;
+		UItimer.Text = Mathf.Ceil(timeleft).ToString();
+    }
+
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _InputEvent(Viewport viewport, InputEvent @ev, int shapeIdx)
