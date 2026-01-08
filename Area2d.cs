@@ -4,6 +4,8 @@ using System;
 public partial class Area2d : Area2D
 {
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
+	private Timer mytimer;
+	private float timeleft = 30f;
     private const float Margin = 50f;
 
 	private Control pauseMenu;
@@ -15,6 +17,10 @@ public partial class Area2d : Area2D
 		rng.Randomize();
 		// Place character at the center of the viewport
         Position = GetViewportRect().Size / 2;
+
+		mytimer = GetNode<Timer>("Timer");
+
+		mytimer.Start(5);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,5 +50,10 @@ public partial class Area2d : Area2D
 			Hide();
 			pauseMenu.Show();
 		}
+	}
+
+	public  void _Timeout()
+	{
+		GetTree().ChangeSceneToFile("res://menu.tscn");
 	}
 }

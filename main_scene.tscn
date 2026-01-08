@@ -27,6 +27,8 @@ texture = ExtResource("1_2c62f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_gyfs4")
 
+[node name="Timer" type="Timer" parent="Area2D"]
+
 [node name="PauseMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -68,6 +70,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Exit game"
 
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_Timeout"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Resume" to="PauseMenu" method="_Resume"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Quit" to="PauseMenu" method="_Quit"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="PauseMenu" method="_Exit"]
