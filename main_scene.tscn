@@ -16,41 +16,6 @@ position = Vector2(577.00006, 325)
 scale = Vector2(0.6010417, 0.6018518)
 texture = ExtResource("1_gyfs4")
 
-[node name="gameUI" type="CanvasLayer" parent="."]
-
-[node name="container" type="VBoxContainer" parent="gameUI"]
-offset_right = 132.0
-offset_bottom = 50.0
-
-[node name="countdown" type="Label" parent="gameUI/container"]
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 4
-max_lines_visible = 1
-
-[node name="score" type="Label" parent="gameUI/container"]
-layout_direction = 2
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-max_lines_visible = 1
-
-[node name="Area2D" type="Area2D" parent="."]
-z_index = 1
-script = ExtResource("2_gyfs4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-z_index = 1
-position = Vector2(-3, -3)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_2c62f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-z_index = 1
-shape = SubResource("CircleShape2D_gyfs4")
-
-[node name="Timer" type="Timer" parent="Area2D"]
-
 [node name="PauseMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -92,7 +57,43 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Exit game"
 
-[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_Timeout"]
+[node name="gameUI" type="CanvasLayer" parent="."]
+
+[node name="container" type="VBoxContainer" parent="gameUI"]
+offset_right = 1157.0
+offset_bottom = 78.0
+mouse_filter = 2
+
+[node name="countdown" type="Label" parent="gameUI/container"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+max_lines_visible = 1
+
+[node name="score" type="Label" parent="gameUI/container"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+max_lines_visible = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+script = ExtResource("2_gyfs4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+z_index = 1
+position = Vector2(-3, -3)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_2c62f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+shape = SubResource("CircleShape2D_gyfs4")
+
+[node name="Timer" type="Timer" parent="Area2D"]
+
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Resume" to="PauseMenu" method="_Resume"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Quit" to="PauseMenu" method="_Quit"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="PauseMenu" method="_Exit"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_Timeout"]
