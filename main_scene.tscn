@@ -19,8 +19,8 @@ texture = ExtResource("1_gyfs4")
 [node name="gameUI" type="CanvasLayer" parent="."]
 
 [node name="container" type="VBoxContainer" parent="gameUI"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 132.0
+offset_bottom = 50.0
 
 [node name="countdown" type="Label" parent="gameUI/container"]
 layout_direction = 2
@@ -36,20 +36,22 @@ size_flags_vertical = 6
 max_lines_visible = 1
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 1
 script = ExtResource("2_gyfs4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+z_index = 1
 position = Vector2(-3, -3)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_2c62f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
 shape = SubResource("CircleShape2D_gyfs4")
 
 [node name="Timer" type="Timer" parent="Area2D"]
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0

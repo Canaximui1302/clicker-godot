@@ -26,8 +26,6 @@ public partial class Area2d : Area2D
 		UItimer = GetParent().GetNode<Label>("gameUI/container/countdown");
 		Score = GetParent().GetNode<Label>("gameUI/container/score");
 
-		UItimer.Position = new Vector2(-100, -300);
-		Score.Position = new Vector2(100, -300);
 		score = 0;
 
 		mytimer.Start(15);
