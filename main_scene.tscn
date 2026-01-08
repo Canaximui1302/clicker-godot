@@ -16,6 +16,25 @@ position = Vector2(577.00006, 325)
 scale = Vector2(0.6010417, 0.6018518)
 texture = ExtResource("1_gyfs4")
 
+[node name="gameUI" type="CanvasLayer" parent="."]
+
+[node name="container" type="VBoxContainer" parent="gameUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="countdown" type="Label" parent="gameUI/container"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+max_lines_visible = 1
+
+[node name="score" type="Label" parent="gameUI/container"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+max_lines_visible = 1
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_gyfs4")
 
@@ -28,16 +47,6 @@ texture = ExtResource("1_2c62f")
 shape = SubResource("CircleShape2D_gyfs4")
 
 [node name="Timer" type="Timer" parent="Area2D"]
-
-[node name="countdown" type="Label" parent="Area2D"]
-anchors_preset = -1
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_right = 1153.0
-offset_bottom = 649.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
 
 [node name="PauseMenu" type="Control" parent="."]
 visible = false

@@ -6,10 +6,11 @@ public partial class Area2d : Area2D
 {
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
 	private Label UItimer;
+	private Label Score;
 	private Timer mytimer;
 	private float timeleft = 15f;
     private const float Margin = 50f;
-
+	private int score;
 	private Control pauseMenu;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -21,9 +22,13 @@ public partial class Area2d : Area2D
         Position = GetViewportRect().Size / 2;
 
 		mytimer = GetNode<Timer>("Timer");
-		UItimer = GetNode<Label>("countdown");
 
-		UItimer.Position = new Vector2(0, -300);
+		UItimer = GetParent().GetNode<Label>("gameUI/container/countdown");
+		Score = GetParent().GetNode<Label>("gameUI/container/score");
+
+		UItimer.Position = new Vector2(-100, -300);
+		Score.Position = new Vector2(100, -300);
+		score = 0;
 
 		mytimer.Start(15);
 	}
@@ -33,7 +38,8 @@ public partial class Area2d : Area2D
         timeleft -= (float)delta;
 		if (timeleft < 0)
 			timeleft = 0;
-		UItimer.Text = Mathf.Ceil(timeleft).ToString();
+		UItimer.Text = "Time left: " + Mathf.Ceil(timeleft).ToString();
+		Score.Text = "Score: " + score.ToString();
     }
 
 
@@ -48,7 +54,7 @@ public partial class Area2d : Area2D
 
             float x = rng.RandfRange(Margin, screenSize.X - Margin);
             float y = rng.RandfRange(Margin, screenSize.Y - Margin);
-
+			score += 1;
             Position = new Vector2(x, y);
         }
 		if (@ev is InputEventKey key && key.Pressed && key.Keycode == Key.Escape)
