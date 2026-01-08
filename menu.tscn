@@ -61,7 +61,17 @@ size_flags_vertical = 3
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
+[node name="hiscore" type="Label" parent="Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "HIGH SCORE: "
+
+[node name="score" type="Label" parent="Main/VBoxContainer"]
+layout_mode = 2
+text = "Score: "
+
 [node name="Settings" parent="." instance=ExtResource("3_mae5d")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="Main/VBoxContainer/Start" to="." method="_Start"]

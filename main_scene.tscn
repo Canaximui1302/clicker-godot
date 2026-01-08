@@ -17,6 +17,7 @@ scale = Vector2(0.6010417, 0.6018518)
 texture = ExtResource("1_gyfs4")
 
 [node name="PauseMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
