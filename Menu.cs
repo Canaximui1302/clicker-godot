@@ -1,16 +1,27 @@
 using Godot;
+using GodotPlugins.Game;
 using System;
 
 public partial class Menu : Control
 {
 	private Control mainMenu;
     private Control SettingsMenu;
+	private Label hiscore;
+	private Label score;
+
+	int high;
+	int last;
 
     public override void _Ready()
     {
         mainMenu = GetNode<Control>("Main");
         SettingsMenu = GetNode<Control>("Settings");
+		hiscore = GetNode<Label>("Main/VBoxContainer/hiscore");
+		score = GetNode<Label>("Main/VBoxContainer/score");
 
+
+		hiscore.Text = "HIGHEST SCORE: ";
+		score.Text = "Score: ";
 		SettingsMenu.Hide();
 
     }
