@@ -8,11 +8,13 @@ public partial class PauseMenu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		ProcessMode = Node.ProcessModeEnum.WhenPaused;
 		parent = GetParent();
 	}
 
 	private void _Resume()
 	{
+		GetTree().Paused = false;
 		Hide();
 		parent.GetNode<Area2D>("Area2D").Show();
 	}
@@ -20,11 +22,13 @@ public partial class PauseMenu : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	private void _Exit()
 	{
+		GetTree().Paused = false;
 		GetTree().Quit();
 	}
 
 	private void _Quit()
 	{
+		GetTree().Paused = false;
 		GetTree().ChangeSceneToFile(path_to_main_screen);
 	}
 }
