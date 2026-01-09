@@ -1,3 +1,13 @@
+/* 
+Autoload Node 
+This file is for global variables, namely score and highest score.
+These variables are to be accessed and used in many different scenes (scripts).
+
+GameState Node can be accessed without any instantiation.
+
+IMPORTANT: always build the project once before adding an Autoload.
+*/
+
 using Godot;
 using System;
 

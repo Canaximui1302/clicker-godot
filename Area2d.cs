@@ -21,14 +21,16 @@ public partial class Area2d : Area2D
 		// Place character at the center of the viewport
         Position = GetViewportRect().Size / 2;
 
+		// Getting necessary Nodes for controlling the UI and the game timer
 		mytimer = GetNode<Timer>("Timer");
-
 		UItimer = GetParent().GetNode<Label>("gameUI/container/countdown");
 		Score = GetParent().GetNode<Label>("gameUI/container/score");
 
+		// Start count down of 15 seconds
 		mytimer.Start(15);
 	}
 
+	// Process function is just for timer countdown since we do not have any physical movements or objects.
     public override void _Process(double delta)
     {
         timeleft -= (float)delta;
@@ -39,7 +41,6 @@ public partial class Area2d : Area2D
     }
 
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _InputEvent(Viewport viewport, InputEvent @ev, int shapeIdx)
 	{
 		if (@ev is InputEventMouseButton mouse && mouse.ButtonIndex == MouseButton.Left && mouse.Pressed)
