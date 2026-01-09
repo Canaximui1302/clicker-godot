@@ -50,7 +50,7 @@ public partial class Area2d : Area2D
 
             float x = rng.RandfRange(Margin, screenSize.X - Margin);
             float y = rng.RandfRange(Margin, screenSize.Y - Margin);
-			//GameState.lastscore += 1;
+			GameState.Lastscore += 1;
             Position = new Vector2(x, y);
         }
 		if (@ev is InputEventKey key && key.Pressed && key.Keycode == Key.Escape)
