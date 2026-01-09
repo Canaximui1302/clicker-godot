@@ -10,7 +10,7 @@ public partial class Area2d : Area2D
 	private Timer mytimer;
 	private float timeleft = 15f;
     private const float Margin = 50f;
-	private int score;
+
 	private Control pauseMenu;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,8 +26,6 @@ public partial class Area2d : Area2D
 		UItimer = GetParent().GetNode<Label>("gameUI/container/countdown");
 		Score = GetParent().GetNode<Label>("gameUI/container/score");
 
-		score = 0;
-
 		mytimer.Start(15);
 	}
 
@@ -37,7 +35,7 @@ public partial class Area2d : Area2D
 		if (timeleft < 0)
 			timeleft = 0;
 		UItimer.Text = "Time left: " + Mathf.Ceil(timeleft).ToString();
-		Score.Text = "Score: " + score.ToString();
+		Score.Text = "Score: " + GameState.Lastscore.ToString();
     }
 
 
@@ -52,7 +50,7 @@ public partial class Area2d : Area2D
 
             float x = rng.RandfRange(Margin, screenSize.X - Margin);
             float y = rng.RandfRange(Margin, screenSize.Y - Margin);
-			score += 1;
+			//GameState.lastscore += 1;
             Position = new Vector2(x, y);
         }
 		if (@ev is InputEventKey key && key.Pressed && key.Keycode == Key.Escape)
@@ -73,6 +71,7 @@ public partial class Area2d : Area2D
 
 	public  void _Timeout()
 	{
+		GameState.Save_score();
 		GetTree().ChangeSceneToFile("res://menu.tscn");
 	}
 }

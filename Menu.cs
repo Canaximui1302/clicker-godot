@@ -20,8 +20,8 @@ public partial class Menu : Control
 		score = GetNode<Label>("Main/VBoxContainer/score");
 
 
-		hiscore.Text = "HIGHEST SCORE: ";
-		score.Text = "Score: ";
+		hiscore.Text = "HIGHEST SCORE: " + GameState.Highscore.ToString();
+		score.Text = "Score: " + GameState.Lastscore.ToString();
 		SettingsMenu.Hide();
 
     }
@@ -34,6 +34,7 @@ public partial class Menu : Control
 
 	private void _Start()
 	{
+		GameState.Reset_score();
 		GetTree().ChangeSceneToFile("res://main_scene.tscn");
 	}
 
