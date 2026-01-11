@@ -8,6 +8,7 @@ public partial class Area2d : Area2D
 	private Label UItimer;
 	private Label Score;
 	private Timer mytimer;
+	private AudioStreamPlayer2D click_sfx;
 	private float timeleft = 15f;
     private const float Margin = 50f;
 
@@ -26,6 +27,7 @@ public partial class Area2d : Area2D
 		UItimer = GetParent().GetNode<Label>("gameUI/container/countdown");
 		Score = GetParent().GetNode<Label>("gameUI/container/score");
 
+		click_sfx = GetNode<AudioStreamPlayer2D>("click_sound");
 		// Start count down of 15 seconds
 		mytimer.Start(15);
 	}
@@ -48,6 +50,7 @@ public partial class Area2d : Area2D
 	{
 		if (@ev is InputEventMouseButton mouse && mouse.ButtonIndex == MouseButton.Left && mouse.Pressed)
         {
+			click_sfx.Play();
             // GD.Print("Character clicked!"); // for debugging
             Vector2 screenSize = viewport.GetVisibleRect().Size;
 
